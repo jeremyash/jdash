@@ -8,7 +8,7 @@
 #'
 #'
 #' @export
-#' @return The correlation coefficient and a probabliity value 
+#' @return The correlation coefficient and a probability value 
 #'
 #' @examples 
 #' x <- matrix(rnorm(60, 2, 1), ncol=2)
