@@ -6,7 +6,6 @@
 #'
 #' @param W2 The second set of vectors expressed by their scalar components in a two-column matrix (u and v, the change along the x and y axes, respectively)
 #'
-#'
 #' @export
 #' @return The correlation coefficient and a probability value 
 #'
