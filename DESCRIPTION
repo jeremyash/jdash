@@ -1,0 +1,9 @@
+Package: jdash
+Version: 0.1
+Date: 4/30/2015
+Author: Jeremy Ash
+Maintainer: Jeremy Ash <jeremyd.ash@gmail.com>
+License: MIT + file LICENSE
+Title: vector correlation statistics
+Description: some useful functions for vector correlations.
+URL: https://github.com/jeremyash/jdash
