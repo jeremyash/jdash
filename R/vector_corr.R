@@ -12,7 +12,7 @@
 #'
 #' @examples 
 #' x <- matrix(rnorm(60, 2, 1), ncol=2)
-#' y <- matrix(rnorm(60, 2, 1), ncol=2)
+#' y <- matrix(rnorm(60, 3, 1), ncol=2)
 #'
 #' vector_corr(x, y) 
 vector_corr <- 
