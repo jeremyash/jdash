@@ -16,6 +16,7 @@
 #' vector_corr(x, y) 
 vector_corr <- 
 function(W1, W2) {
+  if(dim(W1)[2] > 2 | dim(W2)[2] > 2) stop("input data has more than 2 columns")
   if(dim(W1)[1] < 64) warning("no p-value reported due to insufficient sample size")
 
   u1 <- W1[,1] 
@@ -43,5 +44,3 @@ function(W1, W2) {
   print(paste(expression("Correlation coefficient = "), corr_stat)) 
   if(dim(W1)[1] >= 64) print(paste(expression("Probability value = "), p_value))
 }
-
-
