@@ -41,6 +41,5 @@ function(W1, W2) {
   corr_stat <- f/g 
   p_value <- dchisq(corr_stat, 4)
 
-  print(paste(expression("Correlation coefficient = "), corr_stat)) 
-  if(dim(W1)[1] >= 64) print(paste(expression("Probability value = "), p_value))
+  c(correlation=corr_stat, p_value=p_value)
 }
