@@ -2,9 +2,9 @@
 #'
 #' Calculates a correlation coefficient and p-value for two independent sets of vectors.
 #'
-#' @param W1 The first set of vectors expressed by their scalar components in a two-column matrix (u and v, the change along the x and y axes, respectively) 
+#' @param W1 The first set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively) 
 #'
-#' @param W2 The second set of vectors expressed by their scalar components in a two-column matrix (u and v, the change along the x and y axes, respectively)
+#' @param W2 The second set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)
 #'
 #' @export
 #' @return The correlation coefficient and a probability value 
@@ -41,6 +41,16 @@ function(W1, W2) {
   corr_stat <- f/g 
   p_value <- dchisq(corr_stat, 4)
 
-  print(corr_stat) 
-  print(p_value)
+  print(paste(expression("Correlation coefficient = "), corr_stat)) 
+  print(paste(expression("Probability value = "), p_value))
 }
+
+
+
+x <- matrix(rnorm(60, 2, 1), ncol=2)
+y <- matrix(rnorm(60, 3, 1), ncol=2)
+
+vector_corr(x, y) 
+
+
+
