@@ -7,12 +7,12 @@
 vector_corr(W1, W2)
 }
 \arguments{
-\item{W1}{The first set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
+\item{W1}{the first set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
 
-\item{W2}{The second set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
+\item{W2}{the second set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
 }
 \value{
-The correlation coefficient and a probability value
+The correlation coefficient and the probability value (for sample sizes >= 64)
 }
 \description{
 Calculates a correlation coefficient for two independent sets of vectors and performs a significance test

@@ -1,0 +1,45 @@
+---
+title: Computing the correlation between two independent sets of vectors
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vector correlation}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8](inputenc)
+---
+
+##Background
+
+While there are a variety of directional statisticas methods to explore correlations between circular variables, few methods exist that simultaneously consider both the magnitude and direction of the vectors. Crosby et al. (1993) developed a method of vector correlation out of a need for a unified methodology in oceanography and meterology, but the application of this statistic extends to any field with directional data (i.e., in ecology, correalting the movement of species with directional environmental variables).  The statistic is a generalization of the one-dimensional correaltion coefficient, such that it returns a 0 for no correlation and a value of 2 for perfect correlation.  The asymptotic distribution is known to be approximated by a chi-square distribution with 4 degrees of freedom (for sample sizes >= 64), so hypothesis testing is permissible.  For smaller sample sizes, refer to Crosby et al. (1993) for the modified sampling distributions. The theory and development of the statistic is described in detail in Crosby et al. (1993), but the necessary input data and R function to calculate the correlation  coefficient and probability value is shown below.
+
+##Data input and function description 
+
+Given two sets of independent vectos (**W1** and **W2**), we can calculate the correlation coefficient based on their scalar components (*u*, the change along the x-axis and *v*, the change along the y-axis).  The function *vector_corr* will calculate the correaltion coefficient and return a p-value for analyses with sufficient sample size (only the correlation coefficient is returned in the case of small sample sizes).  
+
+The two sets of vectors, represented by their scalar components, are passed to the function as either two column matrices or data frames, with the first column containing *u1* (or *u2*, for the second set of vectors) and the second column containing *v1* (or *v2*, for the second set of vectors).  The data and function are illustrated in the simple example below.
+
+##Example
+
+First, we will generate some sample data:
+
+```{r, echo=FALSE, message=FALSE}
+library(jdash)
+```
+
+```{r}
+set.seed(10001)
+W1 <- matrix(rnorm(200, 3, 1), ncol=2)
+W2 <- matrix(rnorm(200, 4, 2), ncol=2)
+```
+
+Both **W1** and **W2** are two column matrices that can be directly passed to the function as follows:
+
+```{r}
+vector_corr(W1, W2)
+```
+
+
+
+
+
+
+
