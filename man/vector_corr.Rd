@@ -7,19 +7,19 @@
 vector_corr(W1, W2)
 }
 \arguments{
-\item{W1}{The first set of vectors expressed by their scalar components in a two-column matrix (u and v, the change along the x and y axes, respectively)}
+\item{W1}{The first set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
 
-\item{W2}{The second set of vectors expressed by their scalar components in a two-column matrix (u and v, the change along the x and y axes, respectively)}
+\item{W2}{The second set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
 }
 \value{
-The correlation coefficient and a probabliity value
+The correlation coefficient and a probability value
 }
 \description{
 Calculates a correlation coefficient and p-value for two independent sets of vectors.
 }
 \examples{
-x <- matrix(rnorm(60, 2, 1), ncol=2)
-y <- matrix(rnorm(60, 2, 1), ncol=2)
+x <- matrix(rnorm(200, 2, 1), ncol=2)
+y <- matrix(rnorm(200, 3, 1), ncol=2)
 
 vector_corr(x, y)
 }
