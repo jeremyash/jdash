@@ -7,20 +7,26 @@
 vector_corr(W1, W2)
 }
 \arguments{
-\item{W1}{The first set of vectors expressed by their scalar components in a two-column matrix (u and v, the change along the x and y axes, respectively)}
+\item{W1}{the first set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
 
-\item{W2}{The second set of vectors expressed by their scalar components in a two-column matrix (u and v, the change along the x and y axes, respectively)}
+\item{W2}{the second set of vectors expressed by their scalar components in a two-column matrix or data frame (u and v, the change along the x and y axes, respectively)}
 }
 \value{
-The correlation coefficient and a probabliity value
+The correlation coefficient and the probability value (for sample sizes >= 64)
 }
 \description{
-Calculates a correlation coefficient and p-value for two independent sets of vectors.
+Calculates a correlation coefficient for two independent sets of vectors and performs a significance test
+}
+\details{
+The correlation coefficient is a generalization of the square of the one-dimensional correaltion coefficient.  The scale of the coefficient is from 0 (no correlation) to 2 (perfect correlation) and the probability value is derived from a chi-square distributoin with 4 degrees of freedom for sample size of 64 or greater.  Smaller sample sizes require modfified sampling distributions (see reference for additional detail).
 }
 \examples{
-x <- matrix(rnorm(60, 2, 1), ncol=2)
-y <- matrix(rnorm(60, 2, 1), ncol=2)
+x <- matrix(rnorm(200, 2, 1), ncol=2)
+y <- matrix(rnorm(200, 3, 1), ncol=2)
 
 vector_corr(x, y)
+}
+\references{
+Crosby, D.S., Breaker, L.C., & W.H. Gemmill. (1993). A proposed definition for vector correlation in geophysics: theory and application.  Journal of Atmospheric and Oceanic Technology, 10(3), 355-367.
 }
 
