@@ -10,14 +10,13 @@
 #' @return The correlation coefficient and a probability value 
 #'
 #' @examples 
-#' x <- matrix(rnorm(60, 2, 1), ncol=2)
-#' y <- matrix(rnorm(60, 3, 1), ncol=2)
+#' x <- matrix(rnorm(200, 2, 1), ncol=2)
+#' y <- matrix(rnorm(200, 3, 1), ncol=2)
 #'
 #' vector_corr(x, y) 
 vector_corr <- 
 function(W1, W2) {
-  #function based on Crosby et al. 1993 J Atm Oce Tech to calculate the correlation between two-dimensional vectors
-  #WARNING ABOUT SMALL SAMPLE SIZES BASED ON LENGTH OF VECTOR
+  if(dim(W1)[1] < 64) warning("no p-value reported due to insufficient sample size")
 
   u1 <- W1[,1] 
   v1 <- W1[,2] 
@@ -42,15 +41,7 @@ function(W1, W2) {
   p_value <- dchisq(corr_stat, 4)
 
   print(paste(expression("Correlation coefficient = "), corr_stat)) 
-  print(paste(expression("Probability value = "), p_value))
+  if(dim(W1)[1] >= 64) print(paste(expression("Probability value = "), p_value))
 }
-
-
-
-x <- matrix(rnorm(60, 2, 1), ncol=2)
-y <- matrix(rnorm(60, 3, 1), ncol=2)
-
-vector_corr(x, y) 
-
 
 
