@@ -7,3 +7,5 @@ License: MIT + file LICENSE
 Title: vector correlation statistics
 Description: some useful functions for vector correlations.
 URL: https://github.com/jeremyash/jdash
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
