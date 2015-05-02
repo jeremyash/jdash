@@ -37,6 +37,9 @@ Both **W1** and **W2** are two column matrices that can be directly passed to th
 vector_corr(W1, W2)
 ```
 
+##References
+Crosby, D.S., Breaker, L.C., & W.H. Gemmill. (1993). A proposed definition for vector correlation in geophysics: theory and application.  Journal of Atmospheric and Oceanic Technology, 10(3), 355-367.
+
 
 
 
